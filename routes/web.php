@@ -17,6 +17,16 @@ Route::get('/', function () {
     return redirect('home');
 });
 
+Route::get('/clear-cache',function(){
+    \Artisan::call('cache:clear');
+    \Artisan::call('view:cache');
+    \Artisan::call('view:clear');
+
+    Alert::success('Cache has been cleared !')->persistent('Close')->autoclose(6000);
+
+    return back();
+});
+
  // Admin
 Route::resource('admins', 'AdminController');
 //Route::get('create', [App\Http\Controllers\AdminController::class,'create']);
