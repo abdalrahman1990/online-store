@@ -9,7 +9,7 @@ use App\models\Products;
 use App\models\Cart;
 use App\models\Transactions;
 use App\models\Orders;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
