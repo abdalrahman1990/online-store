@@ -22,9 +22,9 @@ Route::get('/clear-cache',function(){
     \Artisan::call('view:cache');
     \Artisan::call('view:clear');
 
-    Alert::success('Cache has been cleared !')->persistent('Close')->autoclose(6000);
+    //Alert::success('Cache has been cleared !')->persistent('Close')->autoclose(6000);
 
-    return back();
+    return redirect('login');
 });
 
  // Admin

@@ -24,6 +24,7 @@ class HomeController extends Controller
         $categories = Category::all('id','category_name','status');
         return view('users/home',['products'=> $products, 'categories' => $categories]);
     }
+    
     public function showProduct($id){
         // User view product
         $product = Products::find($id);
@@ -38,6 +39,7 @@ class HomeController extends Controller
         }
         return view('users.product',['product' => $product,'comments' => $comments]);
     }
+    
     public function showCategory($id){
         // list product in category
         $category = Category::find($id);
